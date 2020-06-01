@@ -14,7 +14,7 @@ namespace Task2_19003041_PROG6211
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Weather.populateArrayLists();
-            Application.Run(new Capture());
+            Application.Run(new Login());
         }
     }
 }

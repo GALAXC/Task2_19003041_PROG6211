@@ -17,7 +17,7 @@ namespace Task2_19003041_PROG6211
         //Getters and Setters
         public static void addWeatherDate(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -29,7 +29,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addMinTemp(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -41,7 +41,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addMaxTemp(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -53,7 +53,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addPrecipitation(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -65,7 +65,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addHumidity(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -77,7 +77,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addWindSpeed(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -89,7 +89,7 @@ namespace Task2_19003041_PROG6211
 
         public static void addCityName(object value)
         {
-            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            StreamWriter weatherInput = new StreamWriter("../../WeatherData.txt", true);
             weatherInput.WriteLine(value);
             weatherInput.Close();
         }
@@ -107,7 +107,7 @@ namespace Task2_19003041_PROG6211
         //Update Local Arrays with Values from File
         public static void populateArrayLists()
         {
-            if (cityNames.Count != TotalLines("../../weatherData.txt") / 7)
+            if (cityNames.Count != TotalLines("../../WeatherData.txt") / 7)
             {
                 cityNames.Clear();
                 weatherDates.Clear();
@@ -117,9 +117,9 @@ namespace Task2_19003041_PROG6211
                 humidities.Clear();
                 windSpeeds.Clear();
 
-                StreamReader weatherOutput = new StreamReader("../../weatherData.txt");
+                StreamReader weatherOutput = new StreamReader("../../WeatherData.txt");
 
-                for (int i = 0; i < (TotalLines("../../weatherData.txt") / 7); i++)
+                for (int i = 0; i < (TotalLines("../../WeatherData.txt") / 7); i++)
                 {
                     cityNames.Add(weatherOutput.ReadLine());
                     weatherDates.Add(weatherOutput.ReadLine());
