@@ -11,6 +11,7 @@ namespace Task2_19003041_PROG6211
         }
 
         private bool valuesGood = true;
+        public bool firstLoad = true;
 
         //
         //Capture section Code

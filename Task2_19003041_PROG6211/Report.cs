@@ -11,11 +11,27 @@ namespace Task2_19003041_PROG6211
             InitializeComponent();
         }
 
+        private static Boolean firstTimeLoad = true;
+
         private void Report_Load(object sender, EventArgs e)
         {
             populateCityComboBox();
             citiesSelected.Add("Cape Town");
             citiesSelected.Add("Johannesburg");
+            loginStrip.Text = "Logged in as: " + Login.loggedInUser;
+            if (firstTimeLoad == true)
+            {
+                label6.Text = "Welcome, " + Login.loggedInUser + ".";
+                label6.Location = new System.Drawing.Point((557 - (label6.Size.Width / 2)), 37);
+                firstTimeLoad = false;
+            }
+            if (Login.isUserAdmin == false)
+            {
+                printReportButton.Visible = false;
+                userTypeLoginStrip.Text = "User Type: Regular";
+                editStrip.Visible = false;
+                searchButton.Location = new System.Drawing.Point(65, 319);
+            }
         }
 
         private ArrayList citiesSelected = new ArrayList();
@@ -239,6 +255,15 @@ namespace Task2_19003041_PROG6211
             this.Hide();
             Capture newCapture = new Capture();
             newCapture.ShowDialog();
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            firstTimeLoad = true;
+            this.Hide();
+            Login newLogin = new Login();
+            newLogin.ShowDialog();
             this.Close();
         }
     }

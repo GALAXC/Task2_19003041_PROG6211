@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.loginQuitButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.loginUsernameBox = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.loginUsernameBox.Name = "loginUsernameBox";
             this.loginUsernameBox.Size = new System.Drawing.Size(282, 20);
             this.loginUsernameBox.TabIndex = 2;
+            this.loginUsernameBox.Text = "Taine";
             // 
             // loginPasswordBox
             // 
@@ -70,6 +72,7 @@
             this.loginPasswordBox.Name = "loginPasswordBox";
             this.loginPasswordBox.Size = new System.Drawing.Size(282, 20);
             this.loginPasswordBox.TabIndex = 3;
+            this.loginPasswordBox.Text = "Password123";
             this.loginPasswordBox.UseSystemPasswordChar = true;
             // 
             // loginUsernameLabel
@@ -114,8 +117,12 @@
             this.Controls.Add(this.loginUsernameBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.loginQuitButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(430, 234);
+            this.MinimumSize = new System.Drawing.Size(430, 234);
             this.Name = "Login";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Weather Forecaster - Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

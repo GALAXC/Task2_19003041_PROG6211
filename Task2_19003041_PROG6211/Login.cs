@@ -11,7 +11,8 @@ namespace Task2_19003041_PROG6211
             InitializeComponent();
         }
 
-        public Boolean isUserAdmin = false;
+        public static String loggedInUser = "";
+        public static Boolean isUserAdmin = false;
 
         private void loginQuitButton_Click(object sender, EventArgs e)
         {
@@ -41,9 +42,10 @@ namespace Task2_19003041_PROG6211
                                 isUserAdmin = false;
                                 break;
                         }
+                        loggedInUser = tempUsername;
                         this.Hide();
-                        Capture newCapture = new Capture();
-                        newCapture.ShowDialog();
+                        Report newReport = new Report();
+                        newReport.ShowDialog();
                         this.Close();
                     }
                     else

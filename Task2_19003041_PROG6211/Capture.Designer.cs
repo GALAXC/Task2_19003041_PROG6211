@@ -433,7 +433,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(340, 390);
+            this.MinimumSize = new System.Drawing.Size(340, 390);
             this.Name = "Capture";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Weather Forecaster - Capture";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -75,7 +75,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.userTypeLoginStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.editStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.forecastStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.captureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeUserStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateUserStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewUserStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.printReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -340,7 +352,7 @@
             // searchButton
             // 
             this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchButton.Location = new System.Drawing.Point(65, 319);
+            this.searchButton.Location = new System.Drawing.Point(146, 319);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 142;
@@ -429,11 +441,10 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(496, 29);
+            this.label6.Location = new System.Drawing.Point(496, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 39);
             this.label6.TabIndex = 140;
@@ -548,7 +559,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.captureToolStripMenuItem});
+            this.logoutToolStripMenuItem,
+            this.loginStrip,
+            this.editStrip});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1098, 24);
@@ -570,18 +583,111 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // loginStrip
+            // 
+            this.loginStrip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.loginStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userTypeLoginStrip});
+            this.loginStrip.Name = "loginStrip";
+            this.loginStrip.Size = new System.Drawing.Size(154, 20);
+            this.loginStrip.Text = "Logged in as: Placeholder";
+            // 
+            // userTypeLoginStrip
+            // 
+            this.userTypeLoginStrip.Name = "userTypeLoginStrip";
+            this.userTypeLoginStrip.Size = new System.Drawing.Size(184, 22);
+            this.userTypeLoginStrip.Text = "User Type: Forecaster";
+            // 
+            // editStrip
+            // 
+            this.editStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.forecastStrip,
+            this.userStrip});
+            this.editStrip.Name = "editStrip";
+            this.editStrip.Size = new System.Drawing.Size(39, 20);
+            this.editStrip.Text = "Edit";
+            // 
+            // forecastStrip
+            // 
+            this.forecastStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.captureToolStripMenuItem,
+            this.updateToolStripMenuItem});
+            this.forecastStrip.Name = "forecastStrip";
+            this.forecastStrip.Size = new System.Drawing.Size(180, 22);
+            this.forecastStrip.Text = "Forecasts";
+            // 
             // captureToolStripMenuItem
             // 
             this.captureToolStripMenuItem.Name = "captureToolStripMenuItem";
-            this.captureToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.captureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.captureToolStripMenuItem.Text = "Capture";
             this.captureToolStripMenuItem.Click += new System.EventHandler(this.captureToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // userStrip
+            // 
+            this.userStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUserStrip,
+            this.removeUserStrip,
+            this.updateUserStrip,
+            this.viewUserStrip});
+            this.userStrip.Name = "userStrip";
+            this.userStrip.Size = new System.Drawing.Size(180, 22);
+            this.userStrip.Text = "Users";
+            // 
+            // addUserStrip
+            // 
+            this.addUserStrip.Name = "addUserStrip";
+            this.addUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.addUserStrip.Text = "Add";
+            // 
+            // removeUserStrip
+            // 
+            this.removeUserStrip.Name = "removeUserStrip";
+            this.removeUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.removeUserStrip.Text = "Remove";
+            // 
+            // updateUserStrip
+            // 
+            this.updateUserStrip.Name = "updateUserStrip";
+            this.updateUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.updateUserStrip.Text = "Update";
+            // 
+            // viewUserStrip
+            // 
+            this.viewUserStrip.Name = "viewUserStrip";
+            this.viewUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.viewUserStrip.Text = "View";
+            // 
+            // printReportButton
+            // 
+            this.printReportButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.printReportButton.Location = new System.Drawing.Point(10, 319);
+            this.printReportButton.Name = "printReportButton";
+            this.printReportButton.Size = new System.Drawing.Size(75, 23);
+            this.printReportButton.TabIndex = 168;
+            this.printReportButton.Text = "Print Report";
+            this.printReportButton.UseVisualStyleBackColor = true;
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 443);
+            this.Controls.Add(this.printReportButton);
             this.Controls.Add(this.clearCitiesSelected);
             this.Controls.Add(this.lowestMaxTemp);
             this.Controls.Add(this.label23);
@@ -621,7 +727,11 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1114, 482);
+            this.MinimumSize = new System.Drawing.Size(1114, 482);
             this.Name = "Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Weather Forecaster - Report";
             this.Load += new System.EventHandler(this.Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).EndInit();
@@ -680,6 +790,18 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginStrip;
+        private System.Windows.Forms.ToolStripMenuItem userTypeLoginStrip;
+        private System.Windows.Forms.Button printReportButton;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editStrip;
+        private System.Windows.Forms.ToolStripMenuItem forecastStrip;
+        private System.Windows.Forms.ToolStripMenuItem userStrip;
+        private System.Windows.Forms.ToolStripMenuItem addUserStrip;
+        private System.Windows.Forms.ToolStripMenuItem removeUserStrip;
+        private System.Windows.Forms.ToolStripMenuItem updateUserStrip;
+        private System.Windows.Forms.ToolStripMenuItem viewUserStrip;
         private System.Windows.Forms.ToolStripMenuItem captureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
     }
 }
