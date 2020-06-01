@@ -28,11 +28,6 @@ namespace Task2_19003041_PROG6211
             if (valuesGood == true && cityBox.Text != "")
             {
                 //Add values to relevant arrays if data is input correctly
-                Weather.addMinTemp(minTempBox.Text);
-                Weather.addMaxTemp(maxTempBox.Text);
-                Weather.addPrecipitation(precipBox.Text);
-                Weather.addHumidity(humidBox.Text);
-                Weather.addWindSpeed(windBox.Text);
                 if (cityBox.Items.Contains(cityBox.Text))
                 {
                     Weather.addCityName(cityBox.Items[cityBox.Items.IndexOf(cityBox.Text)]);
@@ -42,6 +37,11 @@ namespace Task2_19003041_PROG6211
                     Weather.addCityName(cityBox.Text);
                 }
                 Weather.addWeatherDate(dateInputBox.Value);
+                Weather.addMinTemp(minTempBox.Text);
+                Weather.addMaxTemp(maxTempBox.Text);
+                Weather.addPrecipitation(precipBox.Text);
+                Weather.addHumidity(humidBox.Text);
+                Weather.addWindSpeed(windBox.Text);
                 MessageBox.Show("Data Captured Successfully.");
             }
             else
@@ -238,6 +238,7 @@ namespace Task2_19003041_PROG6211
         {
             this.Hide();
             Report reportForm = new Report();
+            Weather.populateArrayLists();
             reportForm.ShowDialog();
             this.Close();
         }

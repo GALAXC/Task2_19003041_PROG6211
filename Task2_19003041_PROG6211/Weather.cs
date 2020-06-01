@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 
 namespace Task2_19003041_PROG6211
 {
@@ -16,7 +17,9 @@ namespace Task2_19003041_PROG6211
         //Getters and Setters
         public static void addWeatherDate(object value)
         {
-            weatherDates.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static DateTime getWeatherDate(int value)
@@ -26,7 +29,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addMinTemp(object value)
         {
-            minTemps.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getMinTemp(int value)
@@ -36,7 +41,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addMaxTemp(object value)
         {
-            maxTemps.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getMaxTemp(int value)
@@ -46,7 +53,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addPrecipitation(object value)
         {
-            precips.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getPrecipitation(int value)
@@ -56,7 +65,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addHumidity(object value)
         {
-            humidities.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getHumidity(int value)
@@ -66,7 +77,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addWindSpeed(object value)
         {
-            windSpeeds.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getWindSpeed(int value)
@@ -76,7 +89,9 @@ namespace Task2_19003041_PROG6211
 
         public static void addCityName(object value)
         {
-            cityNames.Add(value);
+            StreamWriter weatherInput = new StreamWriter("../../weatherData.txt", true);
+            weatherInput.WriteLine(value);
+            weatherInput.Close();
         }
 
         public static string getCityName(int value)
@@ -89,50 +104,44 @@ namespace Task2_19003041_PROG6211
             return cityNames.Count;
         }
 
-        //Test values for program
+        //Update Local Arrays with Values from File
         public static void populateArrayLists()
         {
-            cityNames.Add("Cape Town");
-            cityNames.Add("Cape Town");
-            cityNames.Add("Johannesburg");
-            cityNames.Add("Johannesburg");
-            cityNames.Add("Durban");
+            if (cityNames.Count != TotalLines("../../weatherData.txt") / 7)
+            {
+                cityNames.Clear();
+                weatherDates.Clear();
+                minTemps.Clear();
+                maxTemps.Clear();
+                precips.Clear();
+                humidities.Clear();
+                windSpeeds.Clear();
 
-            weatherDates.Add("2020/03/06 19:38:30");
-            weatherDates.Add("2020/05/19 19:38:30");
-            weatherDates.Add("2020/01/07 19:38:30");
-            weatherDates.Add("2020/09/21 19:38:30");
-            weatherDates.Add("2020/04/15 19:38:30");
+                StreamReader weatherOutput = new StreamReader("../../weatherData.txt");
 
-            minTemps.Add(76);
-            minTemps.Add(59);
-            minTemps.Add(28);
-            minTemps.Add(17);
-            minTemps.Add(21);
+                for (int i = 0; i < (TotalLines("../../weatherData.txt") / 7); i++)
+                {
+                    cityNames.Add(weatherOutput.ReadLine());
+                    weatherDates.Add(weatherOutput.ReadLine());
+                    minTemps.Add(weatherOutput.ReadLine());
+                    maxTemps.Add(weatherOutput.ReadLine());
+                    precips.Add(weatherOutput.ReadLine());
+                    humidities.Add(weatherOutput.ReadLine());
+                    windSpeeds.Add(weatherOutput.ReadLine());
+                }
+                weatherOutput.Close();
+            }
+        }
 
-            maxTemps.Add(96);
-            maxTemps.Add(79);
-            maxTemps.Add(48);
-            maxTemps.Add(37);
-            maxTemps.Add(67);
-
-            precips.Add(12);
-            precips.Add(14);
-            precips.Add(16);
-            precips.Add(19);
-            precips.Add(24);
-
-            humidities.Add(50);
-            humidities.Add(60);
-            humidities.Add(70);
-            humidities.Add(80);
-            humidities.Add(40);
-
-            windSpeeds.Add(25);
-            windSpeeds.Add(35);
-            windSpeeds.Add(45);
-            windSpeeds.Add(55);
-            windSpeeds.Add(40);
+        //Count the total lines in the weatherdata.txt file
+        public static int TotalLines(string filePath)
+        {
+            using (StreamReader r = new StreamReader(filePath))
+            {
+                int i = 0;
+                while (r.ReadLine() != null) { i++; }
+                return i;
+            }
         }
     }
 }

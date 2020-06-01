@@ -121,7 +121,7 @@
             "Tembisa",
             "Umlazi",
             "Vereeniging"});
-            this.cityBox.Location = new System.Drawing.Point(96, 114);
+            this.cityBox.Location = new System.Drawing.Point(103, 114);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(157, 21);
             this.cityBox.TabIndex = 0;
@@ -131,7 +131,7 @@
             // minTempBox
             // 
             this.minTempBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.minTempBox.Location = new System.Drawing.Point(96, 166);
+            this.minTempBox.Location = new System.Drawing.Point(103, 166);
             this.minTempBox.MaxLength = 3;
             this.minTempBox.Name = "minTempBox";
             this.minTempBox.Size = new System.Drawing.Size(39, 20);
@@ -143,7 +143,7 @@
             // maxTempBox
             // 
             this.maxTempBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.maxTempBox.Location = new System.Drawing.Point(96, 192);
+            this.maxTempBox.Location = new System.Drawing.Point(103, 192);
             this.maxTempBox.MaxLength = 3;
             this.maxTempBox.Name = "maxTempBox";
             this.maxTempBox.Size = new System.Drawing.Size(39, 20);
@@ -155,7 +155,7 @@
             // precipBox
             // 
             this.precipBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.precipBox.Location = new System.Drawing.Point(96, 218);
+            this.precipBox.Location = new System.Drawing.Point(103, 218);
             this.precipBox.MaxLength = 3;
             this.precipBox.Name = "precipBox";
             this.precipBox.Size = new System.Drawing.Size(39, 20);
@@ -167,7 +167,7 @@
             // humidBox
             // 
             this.humidBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.humidBox.Location = new System.Drawing.Point(96, 244);
+            this.humidBox.Location = new System.Drawing.Point(103, 244);
             this.humidBox.MaxLength = 3;
             this.humidBox.Name = "humidBox";
             this.humidBox.Size = new System.Drawing.Size(39, 20);
@@ -179,7 +179,7 @@
             // windBox
             // 
             this.windBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.windBox.Location = new System.Drawing.Point(96, 270);
+            this.windBox.Location = new System.Drawing.Point(103, 270);
             this.windBox.MaxLength = 3;
             this.windBox.Name = "windBox";
             this.windBox.Size = new System.Drawing.Size(39, 20);
@@ -194,7 +194,7 @@
             this.cityLabel.AutoSize = true;
             this.cityLabel.BackColor = System.Drawing.Color.Transparent;
             this.cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityLabel.Location = new System.Drawing.Point(58, 117);
+            this.cityLabel.Location = new System.Drawing.Point(65, 117);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(32, 13);
             this.cityLabel.TabIndex = 7;
@@ -206,7 +206,7 @@
             this.dateLabel.AutoSize = true;
             this.dateLabel.BackColor = System.Drawing.Color.Transparent;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(52, 143);
+            this.dateLabel.Location = new System.Drawing.Point(59, 143);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(38, 13);
             this.dateLabel.TabIndex = 8;
@@ -218,7 +218,7 @@
             this.minTempLabel.AutoSize = true;
             this.minTempLabel.BackColor = System.Drawing.Color.Transparent;
             this.minTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minTempLabel.Location = new System.Drawing.Point(24, 169);
+            this.minTempLabel.Location = new System.Drawing.Point(31, 169);
             this.minTempLabel.Name = "minTempLabel";
             this.minTempLabel.Size = new System.Drawing.Size(66, 13);
             this.minTempLabel.TabIndex = 9;
@@ -230,7 +230,7 @@
             this.maxTempLabel.AutoSize = true;
             this.maxTempLabel.BackColor = System.Drawing.Color.Transparent;
             this.maxTempLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxTempLabel.Location = new System.Drawing.Point(21, 195);
+            this.maxTempLabel.Location = new System.Drawing.Point(28, 195);
             this.maxTempLabel.Name = "maxTempLabel";
             this.maxTempLabel.Size = new System.Drawing.Size(69, 13);
             this.maxTempLabel.TabIndex = 10;
@@ -242,7 +242,7 @@
             this.precipLabel.AutoSize = true;
             this.precipLabel.BackColor = System.Drawing.Color.Transparent;
             this.precipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precipLabel.Location = new System.Drawing.Point(8, 221);
+            this.precipLabel.Location = new System.Drawing.Point(15, 221);
             this.precipLabel.Name = "precipLabel";
             this.precipLabel.Size = new System.Drawing.Size(82, 13);
             this.precipLabel.TabIndex = 11;
@@ -254,7 +254,7 @@
             this.humidityLabel.AutoSize = true;
             this.humidityLabel.BackColor = System.Drawing.Color.Transparent;
             this.humidityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.humidityLabel.Location = new System.Drawing.Point(31, 247);
+            this.humidityLabel.Location = new System.Drawing.Point(38, 247);
             this.humidityLabel.Name = "humidityLabel";
             this.humidityLabel.Size = new System.Drawing.Size(59, 13);
             this.humidityLabel.TabIndex = 12;
@@ -266,7 +266,7 @@
             this.windSpeedLabel.AutoSize = true;
             this.windSpeedLabel.BackColor = System.Drawing.Color.Transparent;
             this.windSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windSpeedLabel.Location = new System.Drawing.Point(10, 273);
+            this.windSpeedLabel.Location = new System.Drawing.Point(17, 273);
             this.windSpeedLabel.Name = "windSpeedLabel";
             this.windSpeedLabel.Size = new System.Drawing.Size(80, 13);
             this.windSpeedLabel.TabIndex = 13;
@@ -275,7 +275,7 @@
             // submitButton
             // 
             this.submitButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.submitButton.Location = new System.Drawing.Point(177, 310);
+            this.submitButton.Location = new System.Drawing.Point(184, 310);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 14;
@@ -286,7 +286,7 @@
             // dateInputBox
             // 
             this.dateInputBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateInputBox.Location = new System.Drawing.Point(96, 140);
+            this.dateInputBox.Location = new System.Drawing.Point(103, 140);
             this.dateInputBox.Name = "dateInputBox";
             this.dateInputBox.Size = new System.Drawing.Size(200, 20);
             this.dateInputBox.TabIndex = 15;
@@ -297,7 +297,7 @@
             this.reportLabel.AutoSize = true;
             this.reportLabel.BackColor = System.Drawing.Color.Transparent;
             this.reportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportLabel.Location = new System.Drawing.Point(83, 37);
+            this.reportLabel.Location = new System.Drawing.Point(90, 37);
             this.reportLabel.Name = "reportLabel";
             this.reportLabel.Size = new System.Drawing.Size(140, 39);
             this.reportLabel.TabIndex = 19;
@@ -308,7 +308,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(138, 169);
+            this.label5.Location = new System.Drawing.Point(145, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 29;
@@ -319,7 +319,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(138, 195);
+            this.label7.Location = new System.Drawing.Point(145, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 13);
             this.label7.TabIndex = 30;
@@ -330,7 +330,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(141, 221);
+            this.label8.Location = new System.Drawing.Point(148, 221);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(15, 13);
             this.label8.TabIndex = 31;
@@ -341,7 +341,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(141, 247);
+            this.label9.Location = new System.Drawing.Point(148, 247);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 13);
             this.label9.TabIndex = 32;
@@ -352,7 +352,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(141, 273);
+            this.label10.Location = new System.Drawing.Point(148, 273);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 33;
@@ -361,7 +361,7 @@
             // clearButton
             // 
             this.clearButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearButton.Location = new System.Drawing.Point(65, 310);
+            this.clearButton.Location = new System.Drawing.Point(72, 310);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
             this.clearButton.TabIndex = 129;
@@ -376,7 +376,7 @@
             this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(310, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(324, 24);
             this.menuStrip1.TabIndex = 130;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -407,7 +407,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(310, 351);
+            this.ClientSize = new System.Drawing.Size(324, 351);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
