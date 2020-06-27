@@ -40,7 +40,7 @@
             // 
             // loginQuitButton
             // 
-            this.loginQuitButton.Location = new System.Drawing.Point(140, 145);
+            this.loginQuitButton.Location = new System.Drawing.Point(289, 160);
             this.loginQuitButton.Name = "loginQuitButton";
             this.loginQuitButton.Size = new System.Drawing.Size(75, 23);
             this.loginQuitButton.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(222, 144);
+            this.loginButton.Location = new System.Drawing.Point(82, 160);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 1;
@@ -97,12 +97,12 @@
             // 
             this.loginWelcomeLabel.AutoSize = true;
             this.loginWelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginWelcomeLabel.Location = new System.Drawing.Point(51, 21);
-            this.loginWelcomeLabel.MaximumSize = new System.Drawing.Size(340, 0);
+            this.loginWelcomeLabel.Location = new System.Drawing.Point(127, 9);
+            this.loginWelcomeLabel.MaximumSize = new System.Drawing.Size(200, 0);
             this.loginWelcomeLabel.Name = "loginWelcomeLabel";
-            this.loginWelcomeLabel.Size = new System.Drawing.Size(313, 40);
+            this.loginWelcomeLabel.Size = new System.Drawing.Size(176, 60);
             this.loginWelcomeLabel.TabIndex = 6;
-            this.loginWelcomeLabel.Text = "Welcome to the Weather Forecaster Desktop App!";
+            this.loginWelcomeLabel.Text = "Welcome to the Weather Forecaster Desktop App";
             this.loginWelcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Login
