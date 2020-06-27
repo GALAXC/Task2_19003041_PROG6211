@@ -55,13 +55,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.reportTable = new System.Windows.Forms.DataGridView();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MinTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precipitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WindSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.datesSelected = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -88,6 +81,13 @@
             this.updateUserStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUserStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.printReportButton = new System.Windows.Forms.Button();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MinTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precipitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WindSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -382,63 +382,6 @@
             this.reportTable.Size = new System.Drawing.Size(574, 222);
             this.reportTable.TabIndex = 141;
             // 
-            // City
-            // 
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // MinTemp
-            // 
-            this.MinTemp.HeaderText = "Min Temp (°C)";
-            this.MinTemp.MaxInputLength = 3;
-            this.MinTemp.MinimumWidth = 3;
-            this.MinTemp.Name = "MinTemp";
-            this.MinTemp.ReadOnly = true;
-            this.MinTemp.Width = 65;
-            // 
-            // MaxTemp
-            // 
-            this.MaxTemp.HeaderText = "Max Temp  (°C)";
-            this.MaxTemp.MaxInputLength = 3;
-            this.MaxTemp.MinimumWidth = 3;
-            this.MaxTemp.Name = "MaxTemp";
-            this.MaxTemp.ReadOnly = true;
-            this.MaxTemp.Width = 65;
-            // 
-            // Precipitation
-            // 
-            this.Precipitation.HeaderText = "Precipitation (%)";
-            this.Precipitation.MaxInputLength = 3;
-            this.Precipitation.MinimumWidth = 3;
-            this.Precipitation.Name = "Precipitation";
-            this.Precipitation.ReadOnly = true;
-            this.Precipitation.Width = 75;
-            // 
-            // Humidity
-            // 
-            this.Humidity.HeaderText = "Humidity (%)";
-            this.Humidity.MaxInputLength = 3;
-            this.Humidity.MinimumWidth = 3;
-            this.Humidity.Name = "Humidity";
-            this.Humidity.ReadOnly = true;
-            this.Humidity.Width = 55;
-            // 
-            // WindSpeed
-            // 
-            this.WindSpeed.HeaderText = "Wind Speed (km/h)";
-            this.WindSpeed.MaxInputLength = 3;
-            this.WindSpeed.MinimumWidth = 3;
-            this.WindSpeed.Name = "WindSpeed";
-            this.WindSpeed.ReadOnly = true;
-            this.WindSpeed.Width = 70;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -621,20 +564,20 @@
             this.captureToolStripMenuItem,
             this.updateToolStripMenuItem});
             this.forecastStrip.Name = "forecastStrip";
-            this.forecastStrip.Size = new System.Drawing.Size(180, 22);
+            this.forecastStrip.Size = new System.Drawing.Size(123, 22);
             this.forecastStrip.Text = "Forecasts";
             // 
             // captureToolStripMenuItem
             // 
             this.captureToolStripMenuItem.Name = "captureToolStripMenuItem";
-            this.captureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.captureToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.captureToolStripMenuItem.Text = "Capture";
             this.captureToolStripMenuItem.Click += new System.EventHandler(this.captureToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // userStrip
@@ -645,31 +588,31 @@
             this.updateUserStrip,
             this.viewUserStrip});
             this.userStrip.Name = "userStrip";
-            this.userStrip.Size = new System.Drawing.Size(180, 22);
+            this.userStrip.Size = new System.Drawing.Size(123, 22);
             this.userStrip.Text = "Users";
             // 
             // addUserStrip
             // 
             this.addUserStrip.Name = "addUserStrip";
-            this.addUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.addUserStrip.Size = new System.Drawing.Size(117, 22);
             this.addUserStrip.Text = "Add";
             // 
             // removeUserStrip
             // 
             this.removeUserStrip.Name = "removeUserStrip";
-            this.removeUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.removeUserStrip.Size = new System.Drawing.Size(117, 22);
             this.removeUserStrip.Text = "Remove";
             // 
             // updateUserStrip
             // 
             this.updateUserStrip.Name = "updateUserStrip";
-            this.updateUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.updateUserStrip.Size = new System.Drawing.Size(117, 22);
             this.updateUserStrip.Text = "Update";
             // 
             // viewUserStrip
             // 
             this.viewUserStrip.Name = "viewUserStrip";
-            this.viewUserStrip.Size = new System.Drawing.Size(180, 22);
+            this.viewUserStrip.Size = new System.Drawing.Size(117, 22);
             this.viewUserStrip.Text = "View";
             // 
             // printReportButton
@@ -681,6 +624,66 @@
             this.printReportButton.TabIndex = 168;
             this.printReportButton.Text = "Print Report";
             this.printReportButton.UseVisualStyleBackColor = true;
+            this.printReportButton.Click += new System.EventHandler(this.printReportButton_Click);
+            // 
+            // City
+            // 
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.ReadOnly = true;
+            this.City.Width = 90;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 70;
+            // 
+            // MinTemp
+            // 
+            this.MinTemp.HeaderText = "Min Temp";
+            this.MinTemp.MaxInputLength = 3;
+            this.MinTemp.MinimumWidth = 3;
+            this.MinTemp.Name = "MinTemp";
+            this.MinTemp.ReadOnly = true;
+            this.MinTemp.Width = 79;
+            // 
+            // MaxTemp
+            // 
+            this.MaxTemp.HeaderText = "Max Temp";
+            this.MaxTemp.MaxInputLength = 3;
+            this.MaxTemp.MinimumWidth = 3;
+            this.MaxTemp.Name = "MaxTemp";
+            this.MaxTemp.ReadOnly = true;
+            this.MaxTemp.Width = 80;
+            // 
+            // Precipitation
+            // 
+            this.Precipitation.HeaderText = "Precipitation";
+            this.Precipitation.MaxInputLength = 3;
+            this.Precipitation.MinimumWidth = 3;
+            this.Precipitation.Name = "Precipitation";
+            this.Precipitation.ReadOnly = true;
+            this.Precipitation.Width = 70;
+            // 
+            // Humidity
+            // 
+            this.Humidity.HeaderText = "Humidity";
+            this.Humidity.MaxInputLength = 3;
+            this.Humidity.MinimumWidth = 3;
+            this.Humidity.Name = "Humidity";
+            this.Humidity.ReadOnly = true;
+            this.Humidity.Width = 50;
+            // 
+            // WindSpeed
+            // 
+            this.WindSpeed.HeaderText = "Wind Speed";
+            this.WindSpeed.MaxInputLength = 3;
+            this.WindSpeed.MinimumWidth = 3;
+            this.WindSpeed.Name = "WindSpeed";
+            this.WindSpeed.ReadOnly = true;
+            this.WindSpeed.Width = 91;
             // 
             // Report
             // 
@@ -770,13 +773,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.DataGridView reportTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MinTemp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaxTemp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precipitation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Humidity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WindSpeed;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label datesSelected;
         private System.Windows.Forms.Label label4;
@@ -803,5 +799,12 @@
         private System.Windows.Forms.ToolStripMenuItem viewUserStrip;
         private System.Windows.Forms.ToolStripMenuItem captureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MinTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxTemp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precipitation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Humidity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WindSpeed;
     }
 }

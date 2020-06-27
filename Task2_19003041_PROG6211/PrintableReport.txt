@@ -1,0 +1,30 @@
+------------------------------
+Report Details
+------------------------------
+
+Dates Selected: 1/01/2020 - 30/09/2020
+
+Cities Selected: Cape Town, Johannesburg, Durban, Benoni, Bellville
+
+--------------------    --------------------    
+Lowest                  Highest                 
+--------------------    --------------------    
+Min Temp: 0 °C          Min Temp: 77 °C         
+Max Temp: 0 °C          Max Temp: 97 °C         
+Precipitation: 0 %      Precipitation: 78 %     
+Humidity: 0 %           Humidity: 89 %          
+Wind Speed: 0 %         Wind Speed: 89 %        
+
+------------------------------
+All Results
+------------------------------
+City              Date         Min Temp  Max Temp  Precipitation  Humidity  Wind Speed  
+
+Cape Town         2020/03/06   76°C      96°C      12%            50%       25km/h      
+Cape Town         2020/03/07   77°C      97°C      13%            51%       26km/h      
+Cape Town         2020/05/29   56°C      56°C      56%            56%       56km/h      
+Johannesburg      2020/05/29   12°C      23°C      34%            45%       56km/h      
+Johannesburg      2020/05/29   45°C      56°C      67%            78%       89km/h      
+Durban            2020/05/29   23°C      34°C      45%            56%       67km/h      
+Benoni            2020/06/01   56°C      12°C      78%            89%       12km/h      
+Bellville         2020/06/01   0°C       0°C       0%             0%        0km/h       

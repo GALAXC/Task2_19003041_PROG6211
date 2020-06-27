@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Task2_19003041_PROG6211
@@ -203,7 +205,7 @@ namespace Task2_19003041_PROG6211
                                     }
                                 }
                                 //Populate the table with the report
-                                reportTable.Rows.Add(Weather.getCityName(j), Weather.getWeatherDate(j).ToShortDateString(), Weather.getMinTemp(j), Weather.getMaxTemp(j), Weather.getPrecipitation(j), Weather.getHumidity(j), Weather.getWindSpeed(j));
+                                reportTable.Rows.Add(Weather.getCityName(j), Weather.getWeatherDate(j).ToShortDateString(), Weather.getMinTemp(j) + "°C", Weather.getMaxTemp(j) + "°C", Weather.getPrecipitation(j) + "%", Weather.getHumidity(j) + "%", Weather.getWindSpeed(j) + "km/h");
 
                                 lowestMinTemp.Text = Convert.ToString(lowMinTemp) + " °C";
                                 highestMinTemp.Text = Convert.ToString(highMinTemp) + " °C";
@@ -265,6 +267,82 @@ namespace Task2_19003041_PROG6211
             Login newLogin = new Login();
             newLogin.ShowDialog();
             this.Close();
+        }
+
+        //Create and Format REPORT based on results requested by admin
+        private void printReportButton_Click(object sender, EventArgs e)
+        {
+            searchButton_Click(sender, e);
+            if (reportTable.Rows.Count > 0)
+            {
+                using (StreamWriter rsw = new StreamWriter("../../PrintableReport.txt"))
+                {
+                    rsw.WriteLine("------------------------------");
+                    rsw.WriteLine("Report Details");
+                    rsw.WriteLine("------------------------------");
+                    rsw.WriteLine("\nDates Selected: " + datesSelected.Text);
+                    rsw.WriteLine("\nCities Selected: " + cityReportBox.Text + "\n");
+                    rsw.Write(string.Format("{0,-24}", "--------------------"));
+                    rsw.Write(string.Format("{0,-24}", "--------------------"));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Lowest"));
+                    rsw.Write(string.Format("{0,-24}", "Highest"));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "--------------------"));
+                    rsw.Write(string.Format("{0,-24}", "--------------------"));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Min Temp: " + lowestMinTemp.Text));
+                    rsw.Write(string.Format("{0,-24}", "Min Temp: " + highestMinTemp.Text));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Max Temp: " + lowestMaxTemp.Text));
+                    rsw.Write(string.Format("{0,-24}", "Max Temp: " + highestMaxTemp.Text));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Precipitation: " + lowestPrecip.Text));
+                    rsw.Write(string.Format("{0,-24}", "Precipitation: " + highestPrecip.Text));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Humidity: " + lowestHumid.Text));
+                    rsw.Write(string.Format("{0,-24}", "Humidity: " + highestHumid.Text));
+                    rsw.WriteLine();
+                    rsw.Write(string.Format("{0,-24}", "Wind Speed: " + lowestHumid.Text));
+                    rsw.Write(string.Format("{0,-24}", "Wind Speed: " + highestHumid.Text));
+                    rsw.WriteLine("\n");
+                    rsw.WriteLine("------------------------------");
+                    rsw.WriteLine("All Results");
+                    rsw.WriteLine("------------------------------");
+                    rsw.Write(string.Format("{0,-18}", "City"));
+                    rsw.Write(string.Format("{0,-13}", "Date"));
+                    rsw.Write(string.Format("{0,-10}", "Min Temp"));
+                    rsw.Write(string.Format("{0,-10}", "Max Temp"));
+                    rsw.Write(string.Format("{0,-15}", "Precipitation"));
+                    rsw.Write(string.Format("{0,-10}", "Humidity"));
+                    rsw.Write(string.Format("{0,-12}", "Wind Speed"));
+                    rsw.WriteLine();
+                    rsw.WriteLine();
+                    for (int i = 0; i < reportTable.Rows.Count; i++)
+                    {
+                        rsw.Write(string.Format("{0,-18}", $"{reportTable.Rows[i].Cells[0].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-13:d}", $"{reportTable.Rows[i].Cells[1].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-10}", $"{reportTable.Rows[i].Cells[2].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-10}", $"{reportTable.Rows[i].Cells[3].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-15}", $"{reportTable.Rows[i].Cells[4].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-10}", $"{reportTable.Rows[i].Cells[5].Value.ToString()}"));
+                        rsw.Write(string.Format("{0,-12}", $"{reportTable.Rows[i].Cells[6].Value.ToString()}"));
+                        rsw.WriteLine();
+                    }
+                }
+                DialogResult result = MessageBox.Show("Report successfully created with " + reportTable.Rows.Count + " results.\n\nThis report can be found at: \n\n" + Path.GetFullPath("../../PrintableReport.txt") + "\n\nWould you like to open the report now?", "Report Created", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start(@Path.GetFullPath("../../PrintableReport.txt"));
+                }
+                else
+                {
+                }
+            }
+            else
+            {
+                MessageBox.Show("Report not created! There are no results found in the report table. Please search for existing results and try again.");
+            }
         }
     }
 }

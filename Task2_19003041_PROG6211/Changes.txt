@@ -2,3 +2,8 @@ Task 2 Changes
 - Add Print Report button for admin and make it create a file with a nice looking report to print
 - Allow admin to edit forecasts already captured
 - Store details about the cities users select in file - saved on next program open
+
+/////////////////////////
+PRINT REPORT
+/////////////////////
+- Format data nicely for printing
