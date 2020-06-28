@@ -13,7 +13,7 @@ namespace Task2_19003041_PROG6211
             InitializeComponent();
         }
 
-        private static Boolean firstTimeLoad = true;
+        public static Boolean firstTimeLoad = true;
 
         private void Report_Load(object sender, EventArgs e)
         {
@@ -247,28 +247,6 @@ namespace Task2_19003041_PROG6211
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Capture newCapture = new Capture();
-            newCapture.ShowDialog();
-            this.Close();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            firstTimeLoad = true;
-            this.Hide();
-            Login newLogin = new Login();
-            newLogin.ShowDialog();
-            this.Close();
-        }
-
         //Create and Format REPORT based on results requested by admin
         private void printReportButton_Click(object sender, EventArgs e)
         {
@@ -343,6 +321,37 @@ namespace Task2_19003041_PROG6211
             {
                 MessageBox.Show("Report not created! There are no results found in the report table. Please search for existing results and try again.");
             }
+        }
+
+        //Tool strip menus
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Capture newCapture = new Capture();
+            newCapture.ShowDialog();
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            firstTimeLoad = true;
+            this.Hide();
+            Login newLogin = new Login();
+            newLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Update newUpdate = new Update();
+            newUpdate.ShowDialog();
+            this.Close();
         }
     }
 }

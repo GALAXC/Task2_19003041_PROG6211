@@ -23,6 +23,10 @@ namespace Task2_19003041_PROG6211
             if (File.Exists(@"../../WeatherData.txt") && File.Exists(@"../../LoginDetails.txt"))
             {
                 Weather.populateArrayLists();
+                if (Weather.TotalLines("../../WeatherData.txt") == 0)
+                {
+                    MessageBox.Show("Please note:\nThe WeatherData.txt file is currently empty.\nThis program is limited without first capturing data in the data capture screen.");
+                }
                 Application.Run(new Login());
             }
             else

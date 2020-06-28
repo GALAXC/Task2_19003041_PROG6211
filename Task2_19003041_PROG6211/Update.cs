@@ -1,46 +1,72 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Task2_19003041_PROG6211
 {
-    public partial class Capture : Form
+    public partial class Update : Form
     {
-        public Capture()
+        public Update()
         {
             InitializeComponent();
         }
 
-        private bool valuesGood = true;
-        public bool firstLoad = true;
+        private Boolean valuesGood = true;
 
-        //
-        //Capture section Code
-        //
-        private void submitButton_Click(object sender, EventArgs e)
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            updateUpdateBox();
+            updateLabel.Location = new System.Drawing.Point((this.Size.Width / 2) - (updateLabel.Size.Width / 2), 39);
+            if (editBox.Items.Count != 0)
+            {
+                editBox.SelectedIndex = 0;
+            }
+        }
+
+        private void editBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cityBox.Text = Weather.getCityName(editBox.SelectedIndex);
+            dateInputBox.Value = Weather.getWeatherDate(editBox.SelectedIndex);
+            minTempBox.Text = Weather.getMinTemp(editBox.SelectedIndex);
+            maxTempBox.Text = Weather.getMaxTemp(editBox.SelectedIndex);
+            precipBox.Text = Weather.getPrecipitation(editBox.SelectedIndex);
+            humidBox.Text = Weather.getHumidity(editBox.SelectedIndex);
+            windBox.Text = Weather.getWindSpeed(editBox.SelectedIndex);
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
         {
             checkValues();
             if (valuesGood == true && cityBox.Text != "")
             {
-                //Add values to relevant arrays if data is input correctly
-                if (cityBox.Items.Contains(cityBox.Text))
-                {
-                    Weather.addCityName(cityBox.Items[cityBox.Items.IndexOf(cityBox.Text)]);
-                }
-                else
-                {
-                    Weather.addCityName(cityBox.Text);
-                }
-                Weather.addWeatherDate(dateInputBox.Value);
-                Weather.addMinTemp(minTempBox.Text);
-                Weather.addMaxTemp(maxTempBox.Text);
-                Weather.addPrecipitation(precipBox.Text);
-                Weather.addHumidity(humidBox.Text);
-                Weather.addWindSpeed(windBox.Text);
-                MessageBox.Show("Data Captured Successfully.");
+                string[] lines = System.IO.File.ReadAllLines("../../WeatherData.txt");
+                lines[editBox.SelectedIndex * 7] = cityBox.Text;
+                lines[editBox.SelectedIndex * 7 + 1] = Convert.ToString(dateInputBox.Value);
+                lines[editBox.SelectedIndex * 7 + 2] = Convert.ToString(minTempBox.Text);
+                lines[editBox.SelectedIndex * 7 + 3] = Convert.ToString(maxTempBox.Text);
+                lines[editBox.SelectedIndex * 7 + 4] = Convert.ToString(precipBox.Text);
+                lines[editBox.SelectedIndex * 7 + 5] = Convert.ToString(humidBox.Text);
+                lines[editBox.SelectedIndex * 7 + 6] = Convert.ToString(windBox.Text);
+                System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
+                MessageBox.Show("You have successfully updated this weather entry.");
+                Weather.populateArrayLists();
+                updateUpdateBox();
             }
-            else
+        }
+
+        private void updateUpdateBox()
+        {
+            editBox.Items.Clear();
+            for (int i = 0; i < (Weather.TotalLines(@"../../WeatherData.txt") / 7); i++)
             {
-                MessageBox.Show("The data you have entered is incorrect. \nPlease make sure that: \n- No fields are empty.\n- There are no numbers in the city input field.\n- There are no letters in the in the number fields.");
+                editBox.Items.Add(Weather.getCityName(i) + " - " + Weather.getWeatherDate(i));
             }
         }
 
@@ -54,17 +80,6 @@ namespace Task2_19003041_PROG6211
             valueCheck(precipBox.Text, 0);
             valueCheck(humidBox.Text, 0);
             valueCheck(windBox.Text, 0);
-        }
-
-        //Clear the values from the capture section
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            cityBox.Text = "";
-            minTempBox.Text = "0";
-            maxTempBox.Text = "0";
-            precipBox.Text = "0";
-            humidBox.Text = "0";
-            windBox.Text = "0";
         }
 
         //Check numeric values are entered correctly
@@ -235,12 +250,25 @@ namespace Task2_19003041_PROG6211
             }
         }
 
-        //
-        //End of preventing intial incorrect input
-        //
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Capture newCapture = new Capture();
+            newCapture.ShowDialog();
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report.firstTimeLoad = true;
+            this.Hide();
+            Login newLogin = new Login();
+            newLogin.ShowDialog();
             this.Close();
         }
 

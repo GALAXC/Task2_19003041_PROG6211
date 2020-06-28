@@ -55,6 +55,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.reportTable = new System.Windows.Forms.DataGridView();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MinTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precipitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WindSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.datesSelected = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -81,13 +88,6 @@
             this.updateUserStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.viewUserStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.printReportButton = new System.Windows.Forms.Button();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MinTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precipitation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WindSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -379,8 +379,74 @@
             this.reportTable.Location = new System.Drawing.Point(241, 182);
             this.reportTable.Name = "reportTable";
             this.reportTable.ReadOnly = true;
+            this.reportTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.reportTable.Size = new System.Drawing.Size(574, 222);
             this.reportTable.TabIndex = 141;
+            // 
+            // City
+            // 
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
+            this.City.ReadOnly = true;
+            this.City.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.City.Width = 90;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 70;
+            // 
+            // MinTemp
+            // 
+            this.MinTemp.HeaderText = "Min Temp";
+            this.MinTemp.MaxInputLength = 3;
+            this.MinTemp.MinimumWidth = 3;
+            this.MinTemp.Name = "MinTemp";
+            this.MinTemp.ReadOnly = true;
+            this.MinTemp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MinTemp.Width = 79;
+            // 
+            // MaxTemp
+            // 
+            this.MaxTemp.HeaderText = "Max Temp";
+            this.MaxTemp.MaxInputLength = 3;
+            this.MaxTemp.MinimumWidth = 3;
+            this.MaxTemp.Name = "MaxTemp";
+            this.MaxTemp.ReadOnly = true;
+            this.MaxTemp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.MaxTemp.Width = 80;
+            // 
+            // Precipitation
+            // 
+            this.Precipitation.HeaderText = "Precipitation";
+            this.Precipitation.MaxInputLength = 3;
+            this.Precipitation.MinimumWidth = 3;
+            this.Precipitation.Name = "Precipitation";
+            this.Precipitation.ReadOnly = true;
+            this.Precipitation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Precipitation.Width = 70;
+            // 
+            // Humidity
+            // 
+            this.Humidity.HeaderText = "Humidity";
+            this.Humidity.MaxInputLength = 3;
+            this.Humidity.MinimumWidth = 3;
+            this.Humidity.Name = "Humidity";
+            this.Humidity.ReadOnly = true;
+            this.Humidity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Humidity.Width = 50;
+            // 
+            // WindSpeed
+            // 
+            this.WindSpeed.HeaderText = "Wind Speed";
+            this.WindSpeed.MaxInputLength = 3;
+            this.WindSpeed.MinimumWidth = 3;
+            this.WindSpeed.Name = "WindSpeed";
+            this.WindSpeed.ReadOnly = true;
+            this.WindSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.WindSpeed.Width = 91;
             // 
             // label6
             // 
@@ -522,7 +588,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -579,6 +645,7 @@
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // userStrip
             // 
@@ -625,65 +692,6 @@
             this.printReportButton.Text = "Print Report";
             this.printReportButton.UseVisualStyleBackColor = true;
             this.printReportButton.Click += new System.EventHandler(this.printReportButton_Click);
-            // 
-            // City
-            // 
-            this.City.HeaderText = "City";
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
-            this.City.Width = 90;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 70;
-            // 
-            // MinTemp
-            // 
-            this.MinTemp.HeaderText = "Min Temp";
-            this.MinTemp.MaxInputLength = 3;
-            this.MinTemp.MinimumWidth = 3;
-            this.MinTemp.Name = "MinTemp";
-            this.MinTemp.ReadOnly = true;
-            this.MinTemp.Width = 79;
-            // 
-            // MaxTemp
-            // 
-            this.MaxTemp.HeaderText = "Max Temp";
-            this.MaxTemp.MaxInputLength = 3;
-            this.MaxTemp.MinimumWidth = 3;
-            this.MaxTemp.Name = "MaxTemp";
-            this.MaxTemp.ReadOnly = true;
-            this.MaxTemp.Width = 80;
-            // 
-            // Precipitation
-            // 
-            this.Precipitation.HeaderText = "Precipitation";
-            this.Precipitation.MaxInputLength = 3;
-            this.Precipitation.MinimumWidth = 3;
-            this.Precipitation.Name = "Precipitation";
-            this.Precipitation.ReadOnly = true;
-            this.Precipitation.Width = 70;
-            // 
-            // Humidity
-            // 
-            this.Humidity.HeaderText = "Humidity";
-            this.Humidity.MaxInputLength = 3;
-            this.Humidity.MinimumWidth = 3;
-            this.Humidity.Name = "Humidity";
-            this.Humidity.ReadOnly = true;
-            this.Humidity.Width = 50;
-            // 
-            // WindSpeed
-            // 
-            this.WindSpeed.HeaderText = "Wind Speed";
-            this.WindSpeed.MaxInputLength = 3;
-            this.WindSpeed.MinimumWidth = 3;
-            this.WindSpeed.Name = "WindSpeed";
-            this.WindSpeed.ReadOnly = true;
-            this.WindSpeed.Width = 91;
             // 
             // Report
             // 

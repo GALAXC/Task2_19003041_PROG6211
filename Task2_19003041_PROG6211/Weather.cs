@@ -107,18 +107,16 @@ namespace Task2_19003041_PROG6211
         //Update Local Arrays with Values from File
         public static void populateArrayLists()
         {
-            if (cityNames.Count != TotalLines("../../WeatherData.txt") / 7)
+            cityNames.Clear();
+            weatherDates.Clear();
+            minTemps.Clear();
+            maxTemps.Clear();
+            precips.Clear();
+            humidities.Clear();
+            windSpeeds.Clear();
+
+            using (StreamReader weatherOutput = new StreamReader("../../WeatherData.txt"))
             {
-                cityNames.Clear();
-                weatherDates.Clear();
-                minTemps.Clear();
-                maxTemps.Clear();
-                precips.Clear();
-                humidities.Clear();
-                windSpeeds.Clear();
-
-                StreamReader weatherOutput = new StreamReader("../../WeatherData.txt");
-
                 for (int i = 0; i < (TotalLines("../../WeatherData.txt") / 7); i++)
                 {
                     cityNames.Add(weatherOutput.ReadLine());
@@ -129,7 +127,6 @@ namespace Task2_19003041_PROG6211
                     humidities.Add(weatherOutput.ReadLine());
                     windSpeeds.Add(weatherOutput.ReadLine());
                 }
-                weatherOutput.Close();
             }
         }
 
