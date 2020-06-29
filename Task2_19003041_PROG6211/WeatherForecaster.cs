@@ -27,7 +27,8 @@ namespace Task2_19003041_PROG6211
                 {
                     MessageBox.Show("Please note:\nThe WeatherData.txt file is currently empty.\nThis program is limited without first capturing data in the data capture screen.");
                 }
-                Application.Run(new Login());
+                Login.loggedInUser = "Taine";
+                Application.Run(new Users());
             }
             else
             {

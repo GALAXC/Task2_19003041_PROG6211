@@ -13,6 +13,11 @@ namespace Task2_19003041_PROG6211
         private bool valuesGood = true;
         public bool firstLoad = true;
 
+        private void Capture_Load(object sender, EventArgs e)
+        {
+            loginStrip.Text = "Logged in as: " + Login.loggedInUser;
+        }
+
         //
         //Capture section Code
         //
@@ -36,6 +41,7 @@ namespace Task2_19003041_PROG6211
                 Weather.addPrecipitation(precipBox.Text);
                 Weather.addHumidity(humidBox.Text);
                 Weather.addWindSpeed(windBox.Text);
+                Weather.populateArrayLists();
                 MessageBox.Show("Data Captured Successfully.");
             }
             else
@@ -250,6 +256,23 @@ namespace Task2_19003041_PROG6211
             Report reportForm = new Report();
             Weather.populateArrayLists();
             reportForm.ShowDialog();
+            this.Close();
+        }
+
+        private void updateStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Update newUpdate = new Update();
+            newUpdate.ShowDialog();
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report.firstTimeLoad = true;
+            this.Hide();
+            Login newLogin = new Login();
+            newLogin.ShowDialog();
             this.Close();
         }
     }

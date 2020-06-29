@@ -59,5 +59,15 @@ namespace Task2_19003041_PROG6211.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddUser2 {
+            get {
+                object obj = ResourceManager.GetObject("AddUser2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

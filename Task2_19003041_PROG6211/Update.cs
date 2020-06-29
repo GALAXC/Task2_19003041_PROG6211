@@ -24,6 +24,7 @@ namespace Task2_19003041_PROG6211
         {
             updateUpdateBox();
             updateLabel.Location = new System.Drawing.Point((this.Size.Width / 2) - (updateLabel.Size.Width / 2), 39);
+            loginStrip.Text = "Logged in as: " + Login.loggedInUser;
             if (editBox.Items.Count != 0)
             {
                 editBox.SelectedIndex = 0;
@@ -57,10 +58,17 @@ namespace Task2_19003041_PROG6211
                 System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
                 MessageBox.Show("You have successfully updated this weather entry.");
                 Weather.populateArrayLists();
+                int oldIndex = editBox.SelectedIndex;
                 updateUpdateBox();
+                editBox.SelectedIndex = oldIndex;
+            }
+            else
+            {
+                MessageBox.Show("The data you have entered is incorrect. \nPlease make sure that: \n- No fields are empty.\n- There are no numbers in the city input field.\n- There are no letters in the in the number fields.");
             }
         }
 
+        //Update the result box
         private void updateUpdateBox()
         {
             editBox.Items.Clear();
@@ -250,6 +258,7 @@ namespace Task2_19003041_PROG6211
             }
         }
 
+        //Tool Strip Items
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
