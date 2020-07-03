@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Task2_19003041_PROG6211
@@ -13,6 +14,7 @@ namespace Task2_19003041_PROG6211
 
         public static String loggedInUser = "";
         public static Boolean isUserAdmin = false;
+        private Boolean passwordButtonStatus = true;
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -26,29 +28,25 @@ namespace Task2_19003041_PROG6211
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            using (StreamReader loginOutput = new StreamReader("../../LoginDetails.txt"))
+            string[] login = System.IO.File.ReadAllLines("../../LoginDetails.txt");
+            if (login.Contains(loginUsernameBox.Text))
             {
-                Boolean usernameFound = false;
-                for (int i = 0; i < Weather.TotalLines("../../LoginDetails.txt") / 3; i++)
+                for (int i = 0; i < login.Length; i++)
                 {
-                    String tempUsername = loginOutput.ReadLine();
-                    if (tempUsername == loginUsernameBox.Text)
+                    if (loginUsernameBox.Text == login[i])
                     {
-                        usernameFound = true;
-                        String tempPassword = loginOutput.ReadLine();
-                        if (tempPassword == loginPasswordBox.Text)
+                        if (login[i + 1] == loginPasswordBox.Text)
                         {
-                            switch (loginOutput.ReadLine())
+                            String tempPassword = login[i + 1];
+                            loggedInUser = loginUsernameBox.Text;
+                            if (login[i + 2] == "1")
                             {
-                                case "1":
-                                    isUserAdmin = true;
-                                    break;
-
-                                default:
-                                    isUserAdmin = false;
-                                    break;
+                                isUserAdmin = true;
                             }
-                            loggedInUser = tempUsername;
+                            else
+                            {
+                                isUserAdmin = false;
+                            }
                             this.Hide();
                             Report newReport = new Report();
                             newReport.ShowDialog();
@@ -59,13 +57,28 @@ namespace Task2_19003041_PROG6211
                             MessageBox.Show("The password you have entered for this username is incorrect.");
                         }
                     }
-                    loginOutput.ReadLine();
-                    loginOutput.ReadLine();
                 }
-                if (usernameFound == false)
-                {
-                    MessageBox.Show("The username you have entered cannot be found.");
-                }
+            }
+            else
+            {
+                MessageBox.Show("The username you have entered cannot be found.");
+            }
+        }
+
+        private void showHidePasswordButton_Click(object sender, EventArgs e)
+        {
+            //Password button status = True if the password is hidden
+            if (passwordButtonStatus == true)
+            {
+                passwordButtonStatus = false;
+                loginPasswordBox.UseSystemPasswordChar = false;
+                showHidePasswordButton.BackgroundImage = Task2_19003041_PROG6211.Properties.Resources.HidePassword;
+            }
+            else
+            {
+                passwordButtonStatus = true;
+                loginPasswordBox.UseSystemPasswordChar = true;
+                showHidePasswordButton.BackgroundImage = Task2_19003041_PROG6211.Properties.Resources.ShowPassword;
             }
         }
     }

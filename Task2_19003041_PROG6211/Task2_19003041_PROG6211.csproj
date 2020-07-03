@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PasswordCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordCheck.Designer.cs">
+      <DependentUpon>PasswordCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <Compile Include="WeatherForecaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PasswordCheck.resx">
+      <DependentUpon>PasswordCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddUser2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HidePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPassword.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

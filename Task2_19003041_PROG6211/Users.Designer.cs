@@ -50,6 +50,7 @@
             this.userTypeBox = new System.Windows.Forms.ComboBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.showHidePasswordButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,21 +96,21 @@
             // reportStrip
             // 
             this.reportStrip.Name = "reportStrip";
-            this.reportStrip.Size = new System.Drawing.Size(180, 22);
+            this.reportStrip.Size = new System.Drawing.Size(116, 22);
             this.reportStrip.Text = "Report";
             this.reportStrip.Click += new System.EventHandler(this.reportStrip_Click);
             // 
             // captureStrip
             // 
             this.captureStrip.Name = "captureStrip";
-            this.captureStrip.Size = new System.Drawing.Size(180, 22);
+            this.captureStrip.Size = new System.Drawing.Size(116, 22);
             this.captureStrip.Text = "Capture";
             this.captureStrip.Click += new System.EventHandler(this.captureStrip_Click);
             // 
             // updateStrip
             // 
             this.updateStrip.Name = "updateStrip";
-            this.updateStrip.Size = new System.Drawing.Size(180, 22);
+            this.updateStrip.Size = new System.Drawing.Size(116, 22);
             this.updateStrip.Text = "Update";
             this.updateStrip.Click += new System.EventHandler(this.updateStrip_Click);
             // 
@@ -208,6 +209,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(132, 20);
             this.passwordBox.TabIndex = 168;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // usernameBox
             // 
@@ -231,7 +233,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(164, 285);
+            this.updateButton.Location = new System.Drawing.Point(107, 285);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 23);
             this.updateButton.TabIndex = 174;
@@ -241,7 +243,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(40, 285);
+            this.deleteButton.Location = new System.Drawing.Point(26, 285);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 175;
@@ -249,22 +251,37 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // showHidePasswordButton
+            // 
+            this.showHidePasswordButton.BackColor = System.Drawing.Color.Transparent;
+            this.showHidePasswordButton.BackgroundImage = global::Task2_19003041_PROG6211.Properties.Resources.ShowPassword;
+            this.showHidePasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.showHidePasswordButton.Location = new System.Drawing.Point(255, 170);
+            this.showHidePasswordButton.Name = "showHidePasswordButton";
+            this.showHidePasswordButton.Size = new System.Drawing.Size(23, 23);
+            this.showHidePasswordButton.TabIndex = 177;
+            this.showHidePasswordButton.UseVisualStyleBackColor = false;
+            this.showHidePasswordButton.Click += new System.EventHandler(this.showHidePasswordButton_Click);
+            // 
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.Transparent;
-            this.addButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addButton.BackgroundImage")));
+            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addButton.ImageKey = "(none)";
-            this.addButton.Location = new System.Drawing.Point(127, 285);
+            this.addButton.Location = new System.Drawing.Point(188, 285);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(23, 23);
+            this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 176;
+            this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 342);
+            this.Controls.Add(this.showHidePasswordButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.updateButton);
@@ -279,7 +296,10 @@
             this.Controls.Add(this.usersLabel);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(522, 381);
+            this.MinimumSize = new System.Drawing.Size(522, 381);
             this.Name = "Users";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Weather Forecaster - Users";
             this.Load += new System.EventHandler(this.Users_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -313,5 +333,6 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ToolStripMenuItem updateStrip;
+        private System.Windows.Forms.Button showHidePasswordButton;
     }
 }

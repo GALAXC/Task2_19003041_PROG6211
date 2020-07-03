@@ -250,7 +250,16 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report.firstTimeLoad = true;
+            this.Hide();
+            Login newLogin = new Login();
+            newLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void reportStrip_Click(object sender, EventArgs e)
         {
             this.Hide();
             Report reportForm = new Report();
@@ -259,7 +268,7 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void updateStripMenuItem_Click(object sender, EventArgs e)
+        private void updateStrip_Click(object sender, EventArgs e)
         {
             this.Hide();
             Update newUpdate = new Update();
@@ -267,12 +276,11 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void usersStrip_Click(object sender, EventArgs e)
         {
-            Report.firstTimeLoad = true;
             this.Hide();
-            Login newLogin = new Login();
-            newLogin.ShowDialog();
+            Users newUsers = new Users();
+            newUsers.ShowDialog();
             this.Close();
         }
     }

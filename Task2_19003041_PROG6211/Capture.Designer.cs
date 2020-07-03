@@ -54,14 +54,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.forecastStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.userTypeLoginStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -380,9 +379,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editStrip,
             this.logoutToolStripMenuItem,
-            this.loginStrip});
+            this.loginStrip,
+            this.viewStrip});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(324, 24);
@@ -400,47 +399,17 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // editStrip
+            // logoutToolStripMenuItem
             // 
-            this.editStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.forecastStrip,
-            this.userStrip});
-            this.editStrip.Name = "editStrip";
-            this.editStrip.Size = new System.Drawing.Size(39, 20);
-            this.editStrip.Text = "Edit";
-            // 
-            // forecastStrip
-            // 
-            this.forecastStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportToolStripMenuItem,
-            this.updateStripMenuItem});
-            this.forecastStrip.Name = "forecastStrip";
-            this.forecastStrip.Size = new System.Drawing.Size(180, 22);
-            this.forecastStrip.Text = "Forecasts";
-            // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reportToolStripMenuItem.Text = "Report";
-            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
-            // 
-            // updateStripMenuItem
-            // 
-            this.updateStripMenuItem.Name = "updateStripMenuItem";
-            this.updateStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updateStripMenuItem.Text = "Update";
-            this.updateStripMenuItem.Click += new System.EventHandler(this.updateStripMenuItem_Click);
-            // 
-            // userStrip
-            // 
-            this.userStrip.Name = "userStrip";
-            this.userStrip.Size = new System.Drawing.Size(180, 22);
-            this.userStrip.Text = "Users";
+            this.logoutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // loginStrip
             // 
@@ -457,13 +426,36 @@
             this.userTypeLoginStrip.Size = new System.Drawing.Size(184, 22);
             this.userTypeLoginStrip.Text = "User Type: Forecaster";
             // 
-            // logoutToolStripMenuItem
+            // viewStrip
             // 
-            this.logoutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.viewStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportStrip,
+            this.updateStrip,
+            this.usersStrip});
+            this.viewStrip.Name = "viewStrip";
+            this.viewStrip.Size = new System.Drawing.Size(44, 20);
+            this.viewStrip.Text = "View";
+            // 
+            // reportStrip
+            // 
+            this.reportStrip.Name = "reportStrip";
+            this.reportStrip.Size = new System.Drawing.Size(180, 22);
+            this.reportStrip.Text = "Report";
+            this.reportStrip.Click += new System.EventHandler(this.reportStrip_Click);
+            // 
+            // updateStrip
+            // 
+            this.updateStrip.Name = "updateStrip";
+            this.updateStrip.Size = new System.Drawing.Size(180, 22);
+            this.updateStrip.Text = "Update";
+            this.updateStrip.Click += new System.EventHandler(this.updateStrip_Click);
+            // 
+            // usersStrip
+            // 
+            this.usersStrip.Name = "usersStrip";
+            this.usersStrip.Size = new System.Drawing.Size(180, 22);
+            this.usersStrip.Text = "Users";
+            this.usersStrip.Click += new System.EventHandler(this.usersStrip_Click);
             // 
             // Capture
             // 
@@ -500,7 +492,7 @@
             this.MaximumSize = new System.Drawing.Size(340, 390);
             this.MinimumSize = new System.Drawing.Size(340, 390);
             this.Name = "Capture";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Weather Forecaster - Capture";
             this.Load += new System.EventHandler(this.Capture_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -537,14 +529,13 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editStrip;
-        private System.Windows.Forms.ToolStripMenuItem forecastStrip;
-        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userStrip;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginStrip;
         private System.Windows.Forms.ToolStripMenuItem userTypeLoginStrip;
+        private System.Windows.Forms.ToolStripMenuItem viewStrip;
+        private System.Windows.Forms.ToolStripMenuItem reportStrip;
+        private System.Windows.Forms.ToolStripMenuItem updateStrip;
+        private System.Windows.Forms.ToolStripMenuItem usersStrip;
     }
 }
 

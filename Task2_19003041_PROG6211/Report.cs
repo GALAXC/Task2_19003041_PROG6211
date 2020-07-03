@@ -31,7 +31,7 @@ namespace Task2_19003041_PROG6211
             {
                 printReportButton.Visible = false;
                 userTypeLoginStrip.Text = "User Type: Regular";
-                editStrip.Visible = false;
+                viewStrip.Visible = false;
                 searchButton.Location = new System.Drawing.Point(65, 319);
             }
         }
@@ -329,14 +329,6 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Capture newCapture = new Capture();
-            newCapture.ShowDialog();
-            this.Close();
-        }
-
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             firstTimeLoad = true;
@@ -346,11 +338,27 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void captureStrip_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Capture newCapture = new Capture();
+            newCapture.ShowDialog();
+            this.Close();
+        }
+
+        private void updateStrip_Click(object sender, EventArgs e)
         {
             this.Hide();
             Update newUpdate = new Update();
             newUpdate.ShowDialog();
+            this.Close();
+        }
+
+        private void usersStrip_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Users newUsers = new Users();
+            newUsers.ShowDialog();
             this.Close();
         }
     }

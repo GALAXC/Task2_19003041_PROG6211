@@ -44,27 +44,34 @@ namespace Task2_19003041_PROG6211
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            checkValues();
-            if (valuesGood == true && cityBox.Text != "")
+            DialogResult result = MessageBox.Show("This will update the selected forecast with the new information you have entered.\nAre you sure?", "Update Forecast?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                string[] lines = System.IO.File.ReadAllLines("../../WeatherData.txt");
-                lines[editBox.SelectedIndex * 7] = cityBox.Text;
-                lines[editBox.SelectedIndex * 7 + 1] = Convert.ToString(dateInputBox.Value);
-                lines[editBox.SelectedIndex * 7 + 2] = Convert.ToString(minTempBox.Text);
-                lines[editBox.SelectedIndex * 7 + 3] = Convert.ToString(maxTempBox.Text);
-                lines[editBox.SelectedIndex * 7 + 4] = Convert.ToString(precipBox.Text);
-                lines[editBox.SelectedIndex * 7 + 5] = Convert.ToString(humidBox.Text);
-                lines[editBox.SelectedIndex * 7 + 6] = Convert.ToString(windBox.Text);
-                System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
-                MessageBox.Show("You have successfully updated this weather entry.");
-                Weather.populateArrayLists();
-                int oldIndex = editBox.SelectedIndex;
-                updateUpdateBox();
-                editBox.SelectedIndex = oldIndex;
+                checkValues();
+                if (valuesGood == true && cityBox.Text != "")
+                {
+                    string[] lines = System.IO.File.ReadAllLines("../../WeatherData.txt");
+                    lines[editBox.SelectedIndex * 7] = cityBox.Text;
+                    lines[editBox.SelectedIndex * 7 + 1] = Convert.ToString(dateInputBox.Value);
+                    lines[editBox.SelectedIndex * 7 + 2] = Convert.ToString(minTempBox.Text);
+                    lines[editBox.SelectedIndex * 7 + 3] = Convert.ToString(maxTempBox.Text);
+                    lines[editBox.SelectedIndex * 7 + 4] = Convert.ToString(precipBox.Text);
+                    lines[editBox.SelectedIndex * 7 + 5] = Convert.ToString(humidBox.Text);
+                    lines[editBox.SelectedIndex * 7 + 6] = Convert.ToString(windBox.Text);
+                    System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
+                    MessageBox.Show("You have successfully updated this weather entry.");
+                    Weather.populateArrayLists();
+                    int oldIndex = editBox.SelectedIndex;
+                    updateUpdateBox();
+                    editBox.SelectedIndex = oldIndex;
+                }
+                else
+                {
+                    MessageBox.Show("The data you have entered is incorrect. \nPlease make sure that: \n- No fields are empty.\n- There are no numbers in the city input field.\n- There are no letters in the in the number fields.");
+                }
             }
             else
             {
-                MessageBox.Show("The data you have entered is incorrect. \nPlease make sure that: \n- No fields are empty.\n- There are no numbers in the city input field.\n- There are no letters in the in the number fields.");
             }
         }
 
@@ -259,20 +266,12 @@ namespace Task2_19003041_PROG6211
         }
 
         //Tool Strip Items
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitStrip_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Capture newCapture = new Capture();
-            newCapture.ShowDialog();
-            this.Close();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void logoutStrip_Click(object sender, EventArgs e)
         {
             Report.firstTimeLoad = true;
             this.Hide();
@@ -281,12 +280,28 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
-        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reportStrip_Click(object sender, EventArgs e)
         {
             this.Hide();
             Report reportForm = new Report();
             Weather.populateArrayLists();
             reportForm.ShowDialog();
+            this.Close();
+        }
+
+        private void captureStrip_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Capture newCapture = new Capture();
+            newCapture.ShowDialog();
+            this.Close();
+        }
+
+        private void usersStrip_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Users newUsers = new Users();
+            newUsers.ShowDialog();
             this.Close();
         }
     }

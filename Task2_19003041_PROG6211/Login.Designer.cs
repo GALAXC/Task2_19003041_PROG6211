@@ -36,6 +36,7 @@
             this.loginUsernameLabel = new System.Windows.Forms.Label();
             this.loginPasswordLabel = new System.Windows.Forms.Label();
             this.loginWelcomeLabel = new System.Windows.Forms.Label();
+            this.showHidePasswordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // loginQuitButton
@@ -105,11 +106,24 @@
             this.loginWelcomeLabel.Text = "Welcome to the Weather Forecaster Desktop App";
             this.loginWelcomeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // showHidePasswordButton
+            // 
+            this.showHidePasswordButton.BackColor = System.Drawing.Color.Transparent;
+            this.showHidePasswordButton.BackgroundImage = global::Task2_19003041_PROG6211.Properties.Resources.ShowPassword;
+            this.showHidePasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.showHidePasswordButton.Location = new System.Drawing.Point(377, 117);
+            this.showHidePasswordButton.Name = "showHidePasswordButton";
+            this.showHidePasswordButton.Size = new System.Drawing.Size(23, 23);
+            this.showHidePasswordButton.TabIndex = 179;
+            this.showHidePasswordButton.UseVisualStyleBackColor = false;
+            this.showHidePasswordButton.Click += new System.EventHandler(this.showHidePasswordButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 195);
+            this.Controls.Add(this.showHidePasswordButton);
             this.Controls.Add(this.loginWelcomeLabel);
             this.Controls.Add(this.loginPasswordLabel);
             this.Controls.Add(this.loginUsernameLabel);
@@ -138,5 +152,6 @@
         private System.Windows.Forms.Label loginUsernameLabel;
         private System.Windows.Forms.Label loginPasswordLabel;
         private System.Windows.Forms.Label loginWelcomeLabel;
+        private System.Windows.Forms.Button showHidePasswordButton;
     }
 }
