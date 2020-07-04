@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Task2_19003041_PROG6211
 {
@@ -110,7 +111,7 @@ namespace Task2_19003041_PROG6211
                     newUser.RemoveAt(userBox.SelectedIndex * 3 + 1);
                     newUser.RemoveAt(userBox.SelectedIndex * 3);
                     user = (string[])newUser.ToArray(typeof(string));
-                    System.IO.File.WriteAllLines("../../LoginDetails.txt", user);
+                    File.WriteAllLines("../../LoginDetails.txt", user);
                     int tempIndex = userBox.SelectedIndex;
                     updateUsersBox();
                     userBox.SelectedIndex = tempIndex - 1;

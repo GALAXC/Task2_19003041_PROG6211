@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Task2_19003041_PROG6211
@@ -14,13 +15,17 @@ namespace Task2_19003041_PROG6211
         }
 
         public static Boolean firstTimeLoad = true;
+        private ArrayList userCities = new ArrayList(File.ReadAllLines("../../UserCities.txt"));
+        private int userLine;
+        private ArrayList citiesSelected = new ArrayList();
+        private string[] userCitiesFile;
 
         private void Report_Load(object sender, EventArgs e)
         {
             populateCityComboBox();
-            citiesSelected.Add("Cape Town");
-            citiesSelected.Add("Johannesburg");
             loginStrip.Text = "Logged in as: " + Login.loggedInUser;
+            getUsualCities();
+            updateCityBox();
             if (firstTimeLoad == true)
             {
                 label6.Text = "Welcome, " + Login.loggedInUser + ".";
@@ -35,8 +40,6 @@ namespace Task2_19003041_PROG6211
                 searchButton.Location = new System.Drawing.Point(65, 319);
             }
         }
-
-        private ArrayList citiesSelected = new ArrayList();
 
         //
         //Code for Report section
@@ -58,7 +61,7 @@ namespace Task2_19003041_PROG6211
             }
         }
 
-        //Update selected cities
+        //Update cities on click
         private void cityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (citiesSelected.Contains(cityComboBox.SelectedItem))
@@ -69,6 +72,49 @@ namespace Task2_19003041_PROG6211
             {
                 citiesSelected.Add(cityComboBox.SelectedItem);
             }
+            userCities[userLine] = "";
+            for (int i = 0; i < citiesSelected.Count; i++)
+            {
+                if (i == 0)
+                {
+                    userCities[userLine] += Convert.ToString(citiesSelected[0]);
+                }
+                else
+                {
+                    userCities[userLine] += "," + Convert.ToString(citiesSelected[i]);
+                }
+            }
+            userCitiesFile = (string[])userCities.ToArray(typeof(string));
+            File.WriteAllLines("../../UserCities.txt", userCitiesFile);
+            updateCityBox();
+        }
+
+        //Store cities user selects for next login
+        private void getUsualCities()
+        {
+            citiesSelected.Clear();
+            if (userCities.Contains(Login.loggedInUser))
+            {
+                for (int i = 0; i < userCities.Count; i++)
+                {
+                    if (Login.loggedInUser == Convert.ToString(userCities[i]))
+                    {
+                        userLine = i + 1;
+                        citiesSelected = new ArrayList(Convert.ToString(userCities[i + 1]).Split(','));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                userCities.Add(Login.loggedInUser);
+                userCities.Add("Cape Town, Johannesburg");
+            }
+        }
+
+        //Update selected cities
+        private void updateCityBox()
+        {
             cityReportBox.Clear();
             for (int j = 0; j < citiesSelected.Count; j++)
             {
@@ -247,7 +293,7 @@ namespace Task2_19003041_PROG6211
             }
         }
 
-        //Create and Format REPORT based on results requested by admin
+        //Create and Format printable REPORT based on results requested by admin
         private void printReportButton_Click(object sender, EventArgs e)
         {
             searchButton_Click(sender, e);
