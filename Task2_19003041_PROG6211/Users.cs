@@ -101,20 +101,39 @@ namespace Task2_19003041_PROG6211
         private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("This will delete the currently selected user.\n\nAre you sure?", "Delete User?", MessageBoxButtons.YesNo);
+            DialogResult resultSame;
+            Boolean logout = false;
             if (result == DialogResult.Yes)
             {
-                PasswordCheck newPasswordCheck = new PasswordCheck();
-                newPasswordCheck.ShowDialog();
-                if (PasswordCheck.allowUser == true)
+                if (usernameBox.Text == Login.loggedInUser)
                 {
-                    newUser.RemoveAt(userBox.SelectedIndex * 3 + 2);
-                    newUser.RemoveAt(userBox.SelectedIndex * 3 + 1);
-                    newUser.RemoveAt(userBox.SelectedIndex * 3);
-                    user = (string[])newUser.ToArray(typeof(string));
-                    File.WriteAllLines("../../LoginDetails.txt", user);
-                    int tempIndex = userBox.SelectedIndex;
-                    updateUsersBox();
-                    userBox.SelectedIndex = tempIndex - 1;
+                    resultSame = MessageBox.Show("Are you sure you want to delete the account you are currently logged in to?", "Delete Current Account?", MessageBoxButtons.YesNo);
+                    logout = true;
+                }
+                else
+                {
+                    resultSame = DialogResult.Yes;
+                }
+
+                if (resultSame == DialogResult.Yes)
+                {
+                    PasswordCheck newPasswordCheck = new PasswordCheck();
+                    newPasswordCheck.ShowDialog();
+                    if (PasswordCheck.allowUser == true)
+                    {
+                        newUser.RemoveAt(userBox.SelectedIndex * 3 + 2);
+                        newUser.RemoveAt(userBox.SelectedIndex * 3 + 1);
+                        newUser.RemoveAt(userBox.SelectedIndex * 3);
+                        user = (string[])newUser.ToArray(typeof(string));
+                        File.WriteAllLines("../../LoginDetails.txt", user);
+                        int tempIndex = userBox.SelectedIndex;
+                        updateUsersBox();
+                        userBox.SelectedIndex = tempIndex - 1;
+                        if (logout == true)
+                        {
+                            logoutToolStripMenuItem_Click(sender, e);
+                        }
+                    }
                 }
             }
         }

@@ -107,8 +107,10 @@ namespace Task2_19003041_PROG6211
             }
             else
             {
+                userLine = userCities.Count + 1;
                 userCities.Add(Login.loggedInUser);
-                userCities.Add("Cape Town, Johannesburg");
+                userCities.Add("Cape Town,Johannesburg");
+                citiesSelected = new ArrayList { "Cape Town", "Johannesburg" };
             }
         }
 
