@@ -1,5 +1,5 @@
 Taine
-Cape Town,Durban,Johannesburg
+Durban,Cape Town,Johannesburg
 John
 Cape Town,Johannesburg
 Jimmy

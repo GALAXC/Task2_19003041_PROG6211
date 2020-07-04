@@ -23,6 +23,7 @@ namespace Task2_19003041_PROG6211
         private ArrayList newUser;
         private Boolean passwordButtonStatus = true;
 
+        //Prepare user form on load
         private void Users_Load(object sender, EventArgs e)
         {
             usersLabel.Location = new System.Drawing.Point((this.Size.Width / 2) - (usersLabel.Size.Width / 2), 39);

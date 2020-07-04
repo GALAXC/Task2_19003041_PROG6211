@@ -20,6 +20,7 @@ namespace Task2_19003041_PROG6211
         private ArrayList citiesSelected = new ArrayList();
         private string[] userCitiesFile;
 
+        //Prepare report screen based on various details
         private void Report_Load(object sender, EventArgs e)
         {
             populateCityComboBox();
@@ -64,6 +65,7 @@ namespace Task2_19003041_PROG6211
         //Update cities on click
         private void cityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            getUsualCities();
             if (citiesSelected.Contains(cityComboBox.SelectedItem))
             {
                 citiesSelected.Remove(cityComboBox.SelectedItem);
@@ -100,8 +102,14 @@ namespace Task2_19003041_PROG6211
                     if (Login.loggedInUser == Convert.ToString(userCities[i]))
                     {
                         userLine = i + 1;
-                        citiesSelected = new ArrayList(Convert.ToString(userCities[i + 1]).Split(','));
-                        break;
+                        if (Convert.ToString(userCities[i + 1]) == "None")
+                        {
+                        }
+                        else
+                        {
+                            citiesSelected = new ArrayList(Convert.ToString(userCities[i + 1]).Split(','));
+                            break;
+                        }
                     }
                 }
             }
@@ -139,6 +147,10 @@ namespace Task2_19003041_PROG6211
         private void clearCitiesSelected_Click(object sender, EventArgs e)
         {
             citiesSelected.Clear();
+            userCities[userLine] = "None";
+            userCitiesFile = (string[])userCities.ToArray(typeof(string));
+            File.WriteAllLines("../../UserCities.txt", userCitiesFile);
+            updateCityBox();
             cityReportBox.Text = "None";
         }
 

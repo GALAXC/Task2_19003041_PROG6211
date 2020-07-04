@@ -20,6 +20,7 @@ namespace Task2_19003041_PROG6211
 
         private Boolean valuesGood = true;
 
+        //Set up screen on log in
         private void Edit_Load(object sender, EventArgs e)
         {
             updateUpdateBox();
@@ -31,6 +32,7 @@ namespace Task2_19003041_PROG6211
             }
         }
 
+        //Display details of result on click
         private void editBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             cityBox.Text = Weather.getCityName(editBox.SelectedIndex);
@@ -42,6 +44,7 @@ namespace Task2_19003041_PROG6211
             windBox.Text = Weather.getWindSpeed(editBox.SelectedIndex);
         }
 
+        //Update currently selected result with new details
         private void updateButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("This will update the selected forecast with the new information you have entered.\nAre you sure?", "Update Forecast?", MessageBoxButtons.YesNo);
@@ -50,20 +53,25 @@ namespace Task2_19003041_PROG6211
                 checkValues();
                 if (valuesGood == true && cityBox.Text != "")
                 {
-                    string[] lines = System.IO.File.ReadAllLines("../../WeatherData.txt");
-                    lines[editBox.SelectedIndex * 7] = cityBox.Text;
-                    lines[editBox.SelectedIndex * 7 + 1] = Convert.ToString(dateInputBox.Value);
-                    lines[editBox.SelectedIndex * 7 + 2] = Convert.ToString(minTempBox.Text);
-                    lines[editBox.SelectedIndex * 7 + 3] = Convert.ToString(maxTempBox.Text);
-                    lines[editBox.SelectedIndex * 7 + 4] = Convert.ToString(precipBox.Text);
-                    lines[editBox.SelectedIndex * 7 + 5] = Convert.ToString(humidBox.Text);
-                    lines[editBox.SelectedIndex * 7 + 6] = Convert.ToString(windBox.Text);
-                    System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
-                    MessageBox.Show("You have successfully updated this weather entry.");
-                    Weather.populateArrayLists();
-                    int oldIndex = editBox.SelectedIndex;
-                    updateUpdateBox();
-                    editBox.SelectedIndex = oldIndex;
+                    PasswordCheck newPasswordCheck = new PasswordCheck();
+                    newPasswordCheck.ShowDialog();
+                    if (PasswordCheck.allowUser == true)
+                    {
+                        string[] lines = System.IO.File.ReadAllLines("../../WeatherData.txt");
+                        lines[editBox.SelectedIndex * 7] = cityBox.Text;
+                        lines[editBox.SelectedIndex * 7 + 1] = Convert.ToString(dateInputBox.Value);
+                        lines[editBox.SelectedIndex * 7 + 2] = Convert.ToString(minTempBox.Text);
+                        lines[editBox.SelectedIndex * 7 + 3] = Convert.ToString(maxTempBox.Text);
+                        lines[editBox.SelectedIndex * 7 + 4] = Convert.ToString(precipBox.Text);
+                        lines[editBox.SelectedIndex * 7 + 5] = Convert.ToString(humidBox.Text);
+                        lines[editBox.SelectedIndex * 7 + 6] = Convert.ToString(windBox.Text);
+                        System.IO.File.WriteAllLines("../../WeatherData.txt", lines);
+                        MessageBox.Show("You have successfully updated this weather entry.");
+                        Weather.populateArrayLists();
+                        int oldIndex = editBox.SelectedIndex;
+                        updateUpdateBox();
+                        editBox.SelectedIndex = oldIndex;
+                    }
                 }
                 else
                 {

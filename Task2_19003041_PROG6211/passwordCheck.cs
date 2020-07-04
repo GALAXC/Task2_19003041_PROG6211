@@ -20,6 +20,7 @@ namespace Task2_19003041_PROG6211
         public static Boolean allowUser = false;
         private Boolean passwordButtonStatus = true;
 
+        //Form for security checking the password
         private void passwordCheck_Load(object sender, EventArgs e)
         {
             passwordCheckLabel.Text = "Please enter the password for: " + Login.loggedInUser;
@@ -34,6 +35,7 @@ namespace Task2_19003041_PROG6211
             this.Close();
         }
 
+        //Compare password and allow/disallow access
         private void okButton_Click(object sender, EventArgs e)
         {
             string[] login = System.IO.File.ReadAllLines("../../LoginDetails.txt");
@@ -54,6 +56,7 @@ namespace Task2_19003041_PROG6211
             }
         }
 
+        //Show/Hide password
         private void showHidePasswordButton_Click(object sender, EventArgs e)
         {
             //Password button status = True if the password is hidden

@@ -13,6 +13,7 @@ namespace Task2_19003041_PROG6211
         private bool valuesGood = true;
         public bool firstLoad = true;
 
+        //Update logged in user
         private void Capture_Load(object sender, EventArgs e)
         {
             loginStrip.Text = "Logged in as: " + Login.loggedInUser;
@@ -245,6 +246,9 @@ namespace Task2_19003041_PROG6211
         //End of preventing intial incorrect input
         //
 
+        //
+        //Menu Strip Items
+        //
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
