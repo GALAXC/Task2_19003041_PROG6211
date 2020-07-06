@@ -127,9 +127,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AddUser2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\HidePassword.png" />
   </ItemGroup>
   <ItemGroup>
