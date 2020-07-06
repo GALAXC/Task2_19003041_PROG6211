@@ -106,7 +106,7 @@ namespace Task2_19003041_PROG6211
             Boolean logout = false;
             if (result == DialogResult.Yes)
             {
-                if (usernameBox.Text == Login.loggedInUser)
+                if (Convert.ToString(newUser[userBox.SelectedIndex * 3]) == Login.loggedInUser)
                 {
                     resultSame = MessageBox.Show("Are you sure you want to delete the account you are currently logged in to?", "Delete Current Account?", MessageBoxButtons.YesNo);
                     logout = true;

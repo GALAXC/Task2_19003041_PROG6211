@@ -1,10 +1,8 @@
 Taine
-Durban,Cape Town,Johannesburg
+Cape Town,Durban
 John
-Cape Town,Johannesburg
+Cape Town,Johannesburg,Durban
 Jimmy
 Cape Town,Johannesburg
 Pranav
 Cape Town
-Jimbo
-Cape Town,Johannesburg
