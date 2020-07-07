@@ -77,7 +77,7 @@
             // showHidePasswordButton
             // 
             this.showHidePasswordButton.BackColor = System.Drawing.Color.Transparent;
-            this.showHidePasswordButton.BackgroundImage = global::Task2_19003041_PROG6211.Properties.Resources.ShowPassword;
+            this.showHidePasswordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("showHidePasswordButton.BackgroundImage")));
             this.showHidePasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.showHidePasswordButton.Location = new System.Drawing.Point(336, 66);
             this.showHidePasswordButton.Name = "showHidePasswordButton";

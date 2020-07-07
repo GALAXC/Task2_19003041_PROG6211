@@ -63,16 +63,6 @@ namespace Task2_19003041_PROG6211.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AddUser2 {
-            get {
-                object obj = ResourceManager.GetObject("AddUser2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap HidePassword {
             get {
                 object obj = ResourceManager.GetObject("HidePassword", resourceCulture);
